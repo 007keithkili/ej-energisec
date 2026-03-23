@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>EJ Energisec Ltd | Power & Protection Redefined</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1e2a3e;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 32px;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Enhanced logo styling: larger, no white box, natural blending */
+    .logo-img {
+      height: 58px;
+      width: auto;
+      border-radius: 14px;
+      background: transparent;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+      transition: transform 0.2s;
+    }
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+
+    .brand-name {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #0f2c39;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-name span {
+      font-weight: 600;
+      color: #e67e22;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f3e48;
+      font-weight: 600;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #e67e22;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #1f3e48;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #e67e22;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .btn-primary:hover {
+      background: #cf711f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(230,126,34,0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e67e22;
+      color: #e67e22;
+      padding: 10px 26px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #e67e22;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(120deg, #fef9f0 0%, #fff7ed 100%);
+      padding: 80px 0 70px;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1e2a3e;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      color: #4a5b6e;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 56px;
+      color: #0f2c39;
+      letter-spacing: -0.3px;
+    }
+
+    .section-title span {
+      color: #e67e22;
+    }
+
+    /* Services cards (destinations style) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid #f0ede8;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-img {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .service-card:hover .card-img img {
+      transform: scale(1.03);
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .card-content p {
+      color: #5a6e7c;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      background: #fef2e6;
+      color: #e67e22;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Why Choose Grid (like wildlife cards) */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .why-item {
+      background: #fefaf5;
+      border-radius: 28px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: 0.2s;
+      border: 1px solid #ffe9da;
+    }
+
+    .why-item i {
+      font-size: 2.4rem;
+      background: white;
+      padding: 16px;
+      border-radius: 60px;
+      color: #e67e22;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .why-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    /* Solutions image+text rows */
+    .solutions-showcase {
+      background: #ffffff;
+      margin-top: 20px;
+    }
+
+    .solution-row {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 70px;
+      flex-wrap: wrap;
+    }
+
+    .solution-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .solution-img {
+      flex: 1;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    }
+
+    .solution-img img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+
+    .solution-text {
+      flex: 1;
+    }
+
+    .solution-text h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .solution-text p {
+      margin-bottom: 18px;
+      color: #475e6b;
+    }
+
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .feature-list li i {
+      color: #e67e22;
+    }
+
+    /* GALLERY SECTION - new */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .gallery-item {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-caption {
+      padding: 16px;
+      background: white;
+      text-align: center;
+      font-weight: 600;
+      color: #1f3e48;
+    }
+
+    /* Process Section (new) */
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .step {
+      background: #fefaf5;
+      border-radius: 28px;
+      padding: 32px 24px;
+      text-align: center;
+      flex: 1 1 200px;
+      transition: 0.2s;
+      border: 1px solid #ffe9da;
+    }
+    .step .step-number {
+      width: 50px;
+      height: 50px;
+      background: #e67e22;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      margin: 0 auto 20px;
+    }
+
+    /* Stats Counter Section */
+    .stats-section {
+      background: #0f2c39;
+      color: white;
+      text-align: center;
+    }
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .stat-item {
+      flex: 1;
+      padding: 20px;
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #f7bc6e;
+    }
+    .stat-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: #fefaf5;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f0e7de;
+    }
+
+    .testimonial-card i {
+      font-size: 2rem;
+      color: #e67e22;
+      opacity: 0.5;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card p {
+      font-style: normal;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      color: #2d4a5a;
+    }
+
+    .client {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+      color: white;
+      text-align: center;
+      padding: 64px 32px;
+      border-radius: 48px;
+      margin: 40px auto;
+    }
+    .cta-banner h3 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .cta-banner .btn-outline-light {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .cta-banner .btn-outline-light:hover {
+      background: white;
+      color: #e67e22;
+    }
+
+    /* Contact */
+    .contact-section {
+      background: white;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      background: #fefaf5;
+      border-radius: 48px;
+      padding: 48px;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .contact-detail i {
+      width: 32px;
+      font-size: 1.4rem;
+      color: #e67e22;
+    }
+
+    .contact-form {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 40px;
+      border: 1px solid #e2dcd5;
+      font-family: inherit;
+      background: white;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #e67e22;
+      box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f2c39;
+      color: #d9e2e8;
+      padding: 48px 0 24px;
+      margin-top: 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #f7bc6e;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      color: #cddfe7;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover {
+      color: #e67e22;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #2a4d5e;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 20px;
+        margin-top: 16px;
+        border-radius: 28px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .solution-row, .solution-row.reverse {
+        flex-direction: column;
+      }
+      .contact-wrapper {
+        padding: 32px;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+      .stats-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img class="logo-img" src="https://i.pinimg.com/736x/2c/14/89/2c14897a48f4d08a5eb686a3b289a9c0.jpg" alt="EJ Energisec Ltd">
+        <div class="brand-name">EJ Energisec <span>Ltd</span></div>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Power & Protection <br>Engineered for Excellence</h1>
+        <p>Reliable electrical, solar & security solutions — residential, commercial & industrial. Trust the experts who deliver on time, every time.</p>
+        <a href="#contact" class="btn-primary">Request a Quote →</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technician with solar panel">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our <span>Core Services</span></h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Electrical wiring"></div>
+          <div class="card-content"><h3>⚡ Electrical Installation</h3><p>Full wiring, fault diagnosis, repairs & upgrades for residential and commercial buildings.</p><div class="badge-list"><span class="badge">24/7 Support</span><span class="badge">Certified</span></div></div>
+        </div>
+        <div class="service-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1582653291997-079a1b04e6d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CCTV camera"></div>
+          <div class="card-content"><h3>📹 CCTV & Surveillance</h3><p>High-definition cameras, remote monitoring & intelligent security solutions.</p><div class="badge-list"><span class="badge">4K Options</span><span class="badge">Cloud Storage</span></div></div>
+        </div>
+        <div class="service-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar panels"></div>
+          <div class="card-content"><h3>☀️ Solar Power Systems</h3><p>Design, installation & servicing of backup & off-grid solar solutions.</p><div class="badge-list"><span class="badge">Hybrid Systems</span><span class="badge">Battery Backup</span></div></div>
+        </div>
+        <div class="service-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1558002038-1055e2e28e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alarm system"></div>
+          <div class="card-content"><h3>🚨 Alarm & Security</h3><p>Intruder alarms, motion sensors & smart alert systems.</p><div class="badge-list"><span class="badge">Wireless</span><span class="badge">Mobile alerts</span></div></div>
+        </div>
+        <div class="service-card">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1574607383476-d5173e83f50e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Electric fence"></div>
+          <div class="card-content"><h3>⚡ Electric Fence Systems</h3><p>Perimeter security, energizers & professional installation.</p><div class="badge-list"><span class="badge">High Voltage</span><span class="badge">Compliant</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions: many images + text beside (alternating) -->
+  <section id="solutions" class="solutions-showcase">
+    <div class="container">
+      <h2 class="section-title">Expert <span>Solutions</span> in Action</h2>
+      <div class="solution-row"><div class="solution-img"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Electrical repair"></div><div class="solution-text"><h3>Precision Electrical Work</h3><p>From complex industrial panels to elegant residential lighting, our licensed electricians ensure safety and efficiency.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Full rewiring & circuit breakers</li><li><i class="fas fa-check-circle"></i> Energy audits & surge protection</li></ul></div></div>
+      <div class="solution-row reverse"><div class="solution-img"><img src="https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CCTV control room"></div><div class="solution-text"><h3>Smart CCTV & Remote View</h3><p>Monitor your property from anywhere. High-resolution cameras with night vision and AI motion detection.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> IP & analog systems</li><li><i class="fas fa-check-circle"></i> Mobile & desktop access</li></ul></div></div>
+      <div class="solution-row"><div class="solution-img"><img src="https://images.unsplash.com/photo-1613665814406-a2ed942da942?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar panel installation"></div><div class="solution-text"><h3>Solar for Independence</h3><p>Reduce carbon footprint and enjoy uninterrupted power. On-grid, off-grid and hybrid systems tailored to your roof.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> On-grid & off-grid solutions</li><li><i class="fas fa-check-circle"></i> Regular maintenance packages</li></ul></div></div>
+      <div class="solution-row reverse"><div class="solution-img"><img src="https://images.unsplash.com/photo-1580584126903-c17d41830450?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alarm keypad"></div><div class="solution-text"><h3>Smart Alarms & Perimeter Defense</h3><p>Integrated alarm systems with magnetic contacts, PIR sensors, plus heavy-duty electric fence for ultimate perimeter security.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Wireless & wired alarms</li><li><i class="fas fa-check-circle"></i> Electric fence with alarm integration</li></ul></div></div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION (new) -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Project <span>Gallery</span></h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Electrical panel upgrade"><div class="gallery-caption">Commercial Panel Upgrade</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558002038-1055e2e28e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alarm installation"><div class="gallery-caption">Wireless Alarm System</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar rooftop"><div class="gallery-caption">Solar Rooftop Array</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1582653291997-079a1b04e6d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CCTV installation"><div class="gallery-caption">CCTV & NVR Setup</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1574607383476-d5173e83f50e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Electric fence"><div class="gallery-caption">Perimeter Electric Fence</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial wiring"><div class="gallery-caption">Industrial Wiring Excellence</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section (new) -->
+  <section style="background: #fff7ed;">
+    <div class="container">
+      <h2 class="section-title">Our <span>Workflow</span></h2>
+      <div class="process-steps">
+        <div class="step"><div class="step-number">1</div><h4>Consultation</h4><p>Understand your needs and assess site requirements.</p></div>
+        <div class="step"><div class="step-number">2</div><h4>Design & Quote</h4><p>Custom solution with transparent pricing.</p></div>
+        <div class="step"><div class="step-number">3</div><h4>Installation</h4><p>Professional, tidy execution with minimal disruption.</p></div>
+        <div class="step"><div class="step-number">4</div><h4>Handover & Support</h4><p>Training, testing and lifetime aftercare.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Counter -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number">520+</div><div class="stat-label">Projects Completed</div></div>
+        <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Client Satisfaction</div></div>
+        <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Emergency Support</div></div>
+        <div class="stat-item"><div class="stat-number">12+</div><div class="stat-label">Years Experience</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" style="background: #fefaf5;">
+    <div class="container">
+      <h2 class="section-title">Why <span>EJ Energisec Ltd</span></h2>
+      <div class="why-grid">
+        <div class="why-item"><i class="fas fa-users"></i><h4>Professional Expertise</h4><p>Skilled & licensed technicians with years of field experience.</p></div>
+        <div class="why-item"><i class="fas fa-clock"></i><h4>Reliable & Timely</h4><p>Fast response and project completion on schedule.</p></div>
+        <div class="why-item"><i class="fas fa-tag"></i><h4>Affordable Pricing</h4><p>Transparent quotes, no hidden fees, quality guaranteed.</p></div>
+        <div class="why-item"><i class="fas fa-smile"></i><h4>Customer Satisfaction</h4><p>We tailor solutions to exceed your expectations.</p></div>
+        <div class="why-item"><i class="fas fa-microchip"></i><h4>Modern Technology</h4><p>Latest equipment for durable, efficient systems.</p></div>
+        <div class="why-item"><i class="fas fa-building"></i><h4>One-Stop Solution</h4><p>Electrical, solar, security — all under one roof.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our <span>Clients Say</span></h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"EJ Energisec installed our solar system flawlessly. Bills dropped by 70%! Punctual and professional."</p><div class="client">— David M.</div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Excellent CCTV and electric fence installation. The team provided top-notch security advice."</p><div class="client">— Jane W.</div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Very responsive and knowledgeable. Handled our office electrical upgrade and alarm system seamlessly."</p><div class="client">— Samuel K.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="container">
+    <div class="cta-banner">
+      <h3>Ready to secure & power your property?</h3>
+      <p>Contact us today for a free consultation and quotation.</p>
+      <a href="#contact" class="btn-outline-light" style="margin-top: 20px; display: inline-block;">Get a Free Quote →</a>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get in <span>Touch</span></h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Let’s energize your space</h3>
+          <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>0721874966</span></div>
+          <div class="contact-detail"><i class="fas fa-envelope"></i> <span>info@ejenergisec.co.ke</span></div>
+          <div class="contact-detail"><i class="fas fa-user"></i> <span>Kiptoo Eliud: kiptooeliudkiptoo216@gmail.com</span></div>
+          <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span>Nairobi, Kenya</span></div>
+          <p style="margin-top: 24px;"><strong>📞 Emergency support:</strong> 24/7 for urgent electrical & security issues.</p>
+        </div>
+        <div class="contact-form">
+          <form id="inquiryForm">
+            <div class="form-group"><input type="text" placeholder="Full name" required id="name"></div>
+            <div class="form-group"><input type="email" placeholder="Email address" required id="email"></div>
+            <div class="form-group"><input type="tel" placeholder="Phone number" id="phone"></div>
+            <div class="form-group"><textarea rows="4" placeholder="Tell us about your project (electrical, solar, CCTV, fence...)" required id="message"></textarea></div>
+            <button type="submit" class="btn-primary" style="width:100%;">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col"><img src="https://i.pinimg.com/736x/2c/14/89/2c14897a48f4d08a5eb686a3b289a9c0.jpg" style="height: 52px; border-radius: 12px;" alt="logo"><p style="margin-top: 12px;">Reliable power & security solutions.<br>Safety meets innovation.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="#home">Home</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#why-us">Why Us</a></div>
+        <div class="footer-col"><h4>Contact</h4><p>📞 0721874966</p><p>📧 info@ejenergisec.co.ke</p></div>
+      </div>
+      <div class="copyright">© 2025 EJ Energisec Ltd — Excellence in Electrical, Solar & Security.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu');
+    const navLinksEl = document.getElementById('nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => navLinksEl.classList.toggle('active'));
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#") return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+          if (navLinksEl.classList.contains('active')) navLinksEl.classList.remove('active');
+        }
+      });
+    });
+    const form = document.getElementById('inquiryForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name')?.value || 'there';
+        alert(`✅ Thank you ${name}, your message has been sent!\n\nOne of our experts from EJ Energisec Ltd will reply shortly. Call 0721874966 for urgent needs.`);
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
