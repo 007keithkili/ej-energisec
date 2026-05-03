@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VOLTKRAM LTD | Contact Us – Get in Touch with Experts</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1e2a3e;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Navigation (EXACT from reference) */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 32px;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-img {
+      height: 58px;
+      width: auto;
+      border-radius: 14px;
+      background: transparent;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+      transition: transform 0.2s;
+    }
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+
+    .brand-name {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #0f2c39;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-name span {
+      font-weight: 600;
+      color: #e67e22;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f3e48;
+      font-weight: 600;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #e67e22;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #1f3e48;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #e67e22;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: #cf711f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(230,126,34,0.2);
+    }
+
+    /* Page header */
+    .page-header {
+      background: linear-gradient(120deg, #fef9f0 0%, #fff7ed 100%);
+      padding: 60px 0 50px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #0f2c39;
+    }
+    .page-header p {
+      max-width: 680px;
+      margin: 12px auto 0;
+      color: #4a5b6e;
+      font-size: 1.1rem;
+    }
+
+    /* Contact section (no images, only icons) */
+    .contact-section {
+      margin-bottom: 60px;
+    }
+    .contact-wrapper {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      background: #fefaf5;
+      border-radius: 48px;
+      padding: 48px;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 28px;
+      font-weight: 700;
+      color: #0f2c39;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .contact-detail i {
+      width: 32px;
+      font-size: 1.4rem;
+      color: #e67e22;
+    }
+    .contact-detail span, .contact-detail a {
+      color: #2d4a5a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-detail a:hover {
+      color: #e67e22;
+    }
+    .business-hours {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid #e2dcd5;
+    }
+    .business-hours h4 {
+      margin-bottom: 12px;
+      color: #0f2c39;
+    }
+    .business-hours p {
+      margin-bottom: 6px;
+      display: flex;
+      gap: 12px;
+    }
+    /* Contact form */
+    .contact-form {
+      flex: 1;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 40px;
+      border: 1px solid #e2dcd5;
+      font-family: inherit;
+      background: white;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #e67e22;
+      box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+    }
+    textarea {
+      border-radius: 28px;
+      resize: vertical;
+    }
+    /* Map placeholder (no image, just a styled div) */
+    .map-placeholder {
+      background: #e9ecef;
+      border-radius: 32px;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 48px;
+      border: 1px solid #dee2e6;
+    }
+    .map-placeholder i {
+      font-size: 3rem;
+      color: #e67e22;
+      margin-bottom: 16px;
+    }
+    .map-placeholder p {
+      color: #5a6e7c;
+      font-size: 0.9rem;
+    }
+    .map-placeholder a {
+      color: #e67e22;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    /* Footer (exact) */
+    footer {
+      background: #0f2c39;
+      color: #d9e2e8;
+      padding: 48px 0 24px;
+      margin-top: 40px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #f7bc6e;
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      color: #cddfe7;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .footer-col a:hover {
+      color: #e67e22;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #2a4d5e;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 20px;
+        margin-top: 16px;
+        border-radius: 28px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .contact-wrapper {
+        padding: 32px;
+        flex-direction: column;
+      }
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER (EXACT SAME AS REFERENCE) ===================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img class="logo-img" src="https://i.pinimg.com/736x/0a/8c/db/0a8cdbb5d2e0ce91dfdb2d5daea580dd.jpg" alt="Voltkram Ltd">
+        <div class="brand-name">Voltkram <span>Ltd</span></div>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTACT PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <h1>📞 Get in <span style="color:#e67e22;">Touch</span></h1>
+      <p>Have a project in mind? Need a quote or emergency support? Reach out – we’re here to help 24/7.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTACT SECTION (no images) -->
+  <div class="container contact-section">
+    <div class="contact-wrapper">
+      <!-- Left side: contact info & business hours -->
+      <div class="contact-info">
+        <h3>Let’s connect</h3>
+        <div class="contact-detail">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Voltkram Plaza, Kenya</span>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+254721874966">+254 721 874 966</a>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@voltkram.co.ke">info@voltkram.co.ke</a>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-user-tie"></i>
+          <span>Kiptoo Eliud – Technical Director</span>
+        </div>
+        <div class="business-hours">
+          <h4><i class="far fa-clock"></i> Business hours</h4>
+          <p><span>Monday – Friday:</span> 8:00 AM – 6:00 PM</p>
+          <p><span>Saturday:</span> 9:00 AM – 3:00 PM</p>
+          <p><span>Sunday & Public Holidays:</span> Emergency only (call ahead)</p>
+          <p style="margin-top: 12px;"><strong>📞 24/7 emergency support</strong> for urgent electrical / security breakdowns.</p>
+        </div>
+      </div>
+
+      <!-- Right side: contact form -->
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" placeholder="Full name *" required id="fullName">
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email address *" required id="emailAddr">
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone number" id="phoneNum">
+          </div>
+          <div class="form-group">
+            <select id="serviceInterest">
+              <option value="">I'm interested in...</option>
+              <option value="Solar Installation">Solar Power Systems</option>
+              <option value="CCTV">CCTV & Surveillance</option>
+              <option value="Starlink">Starlink Installation</option>
+              <option value="Access Control">Access Control Systems</option>
+              <option value="Fire Alarm">Fire Alarm Systems</option>
+              <option value="Electrical">Electrical Installation</option>
+              <option value="Other">Other / General inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" placeholder="Tell us about your project, requirements or emergency..." required id="messageText"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;">Send Message →</button>
+        </form>
+        <p style="margin-top: 16px; font-size: 0.75rem; color: #7c8f9c;">We’ll respond within 24 hours (faster for urgent cases).</p>
+      </div>
+    </div>
+
+    <!-- Map placeholder (no actual image, just icon & text) -->
+    <div class="map-placeholder">
+      <i class="fas fa-map-pin"></i>
+      <p><strong>📍 Visit our office</strong><br>Voltkram Plaza, Mombasa Road, opposite Gateway Mall, Nairobi</p>
+      <p><a href="https://maps.google.com/?q=Voltkram+Plaza+Mombasa+Road+Nairobi" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER (EXACT SAME AS REFERENCE) ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+
+          <p style="margin-top: 12px;">Reliable power & security solutions.<br>Safety meets innovation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="service.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="why-us.html">Why Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📞 0721874966</p>
+          <p>📧 info@voltkram.co.ke</p>
+        </div>
+      </div>
+      <div class="copyright">© 2025 Voltkram Ltd — Excellence in Electrical, Solar & Security.</div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: mobile menu + form handling -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu');
+    const navLinksEl = document.getElementById('nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => navLinksEl.classList.toggle('active'));
+    }
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinksEl.classList.contains('active')) navLinksEl.classList.remove('active');
+      });
+    });
+
+    // Contact form submission (no page reload, only alert)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('fullName')?.value.trim() || 'there';
+        alert(`✅ Thank you ${name}, your message has been received!\n\nOne of our experts from VoltKram Ltd will reply within 24 hours. For urgent matters, call +254721874966.`);
+        contactForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
